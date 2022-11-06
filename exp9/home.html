@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    
+    <script>
+        var app = angular.module("myapp",['ngRoute']);
+        app.config(function($routeProvider){
+            $routeProvider.when('/1001',{
+                    templateUrl: "1001.html"
+                })  
+                .when('/1002',{
+                    templateUrl: "1002.html"
+                })  
+                .when('/1003',{
+                    templateUrl: "1003.html"
+                })      
+                .when('/1004',{
+                    templateUrl: "1004.html"
+                })  
+        });
+    </script>
+
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body ng-app="myapp" style="margin-top: 50px;">
+    <h1>Student Profiles</h1>
+
+    <h3>Click the Register Number to view their profile:</h3>
+    <div class="links">
+        <a href="#!1001">1001</a>
+        <a href="#!1002">1002</a>
+        <a href="#!1003">1003</a>
+        <a href="#!1004">1004</a>
+    </div><br><br>
+    <hr>
+    <div ng-view style="margin-top: 20px;">
+        
+    </div>
+</body>
+</html>
